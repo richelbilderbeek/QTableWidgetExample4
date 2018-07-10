@@ -1,27 +1,24 @@
-#ifndef QTDIALOG_H
-#define QTDIALOG_H
+#ifndef QTWIDGET_H
+#define QTWIDGET_H
 
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Weffc++"
-#include <QDialog>
+#include <QTableWidget>
 #pragma GCC diagnostic pop
 
-namespace Ui {
-  class QtDialog;
-}
-
-class QtDialog : public QDialog
+class QtWidget : public QTableWidget
 {
   Q_OBJECT
 
 public:
-  explicit QtDialog(QWidget *parent = 0);
-  QtDialog(const QtDialog&) = delete;
-  QtDialog& operator=(const QtDialog&) = delete;
-  ~QtDialog() noexcept;
-
+  explicit QtWidget(
+    const QVector<QString>& text = {},
+    QWidget *parent = 0
+  );
+  QtWidget(const QtWidget&) = delete;
+  QtWidget& operator=(const QtWidget&) = delete;
+  ~QtWidget() noexcept;
 private:
-  Ui::QtDialog *ui;
 };
 
-#endif // QTDIALOG_H
+#endif // QTWIDGET_H
