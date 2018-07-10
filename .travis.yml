@@ -33,7 +33,7 @@ before_script:
 
 script: 
   # Build and run tests
-  - qmake
+  - qmake -qt=qt5
   - make
   # cppcheck
   - cppcheck --quiet --error-exitcode=1 . 
